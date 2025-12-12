@@ -1,0 +1,43 @@
+
+
+export default function Home() {
+  return (
+    <div className="main">
+      <div className="header">
+        <div style={{fontSize:18, fontWeight:600}}>Welcome</div>
+        <div style={{display:"flex", gap:12, alignItems:"center"}}>
+          <div style={{color:"#64748b"}}>Hello, Student User</div>
+          <div style={{width:36, height:36, borderRadius:18, background:"#e2e8f0", display:"flex", alignItems:"center", justifyContent:"center"}}>SU</div>
+        </div>
+      </div>
+
+      <section className="welcome" role="region" aria-label="Welcome">
+        <div className="left">
+          <h2>Welcome to TechApti</h2>
+          <p>Your comprehensive learning and assessment platform for aptitude, technical skills, and interview preparation.</p>
+          <button className="btn-primary">Get Started</button>
+        </div>
+        <div className="illustration">Illustration</div>
+      </section>
+
+      <section className="features" aria-label="Features">
+        <div className="card">
+          <h3>Interactive Quizzes</h3>
+          <p>Test your knowledge with comprehensive quizzes across multiple topics.</p>
+        </div>
+        <div className="card">
+          <h3>Study Materials</h3>
+          <p>Access curated learning resources organized by category and difficulty.</p>
+        </div>
+        <div className="card">
+          <h3>Track Progress</h3>
+          <p>Monitor your performance and see your improvement over time.</p>
+        </div>
+        <div className="card">
+          <h3>Get Certified</h3>
+          <p>Earn certificates and badges as you complete learning milestones.</p>
+        </div>
+      </section>
+    </div>
+  );
+}

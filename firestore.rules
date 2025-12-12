@@ -1,0 +1,31 @@
+// Only authenticated users can read materials/quizzes.
+// Users can only read/write their own profile and attempts.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // attempts collection
+    match /attempts/{attemptId} {
+      // clients can create an attempt for themselves with only safe fields
+      allow create: if request.auth != null
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.keys().hasOnly(['userId','quizId','startTime','status','createdAt']);
+      // clients can read their own attempts; admins can read all
+      allow read: if request.auth != null && (resource.data.userId == request.auth.uid || request.auth.token.admin == true);
+      // only admin or server (Admin SDK) may update or delete attempts
+      allow update, delete: if request.auth != null && request.auth.token.admin == true;
+    }
+
+    // quizzes collection: public read, admin write
+    match /quizzes/{quizId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+
+    // per-quiz attempts summary collection: only admin reads/writes
+    match /quizzes/{quizId}/attempts/{attemptId} {
+      allow read: if request.auth != null && request.auth.token.admin == true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+  }
+}

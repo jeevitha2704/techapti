@@ -1,0 +1,30 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+export default function Sidebar() {
+  return (
+    <aside className="sidebar" aria-label="Main navigation">
+      <div className="brand">
+        <div className="logo">TA</div>
+        <h1>TechApti</h1>
+      </div>
+
+      <nav className="nav" aria-label="Sidebar">
+        <NavLink to="/materials" className={({isActive}) => isActive ? "active" : ""}>
+          <span>📚</span><span className="label">Study Materials</span>
+        </NavLink>
+        <NavLink to="/quizzes" className={({isActive}) => isActive ? "active" : ""}>
+          <span>📝</span><span className="label">Quizzes</span>
+        </NavLink>
+        <NavLink to="/results" className={({isActive}) => isActive ? "active" : ""}>
+          <span>📈</span><span className="label">Results</span>
+        </NavLink>
+        <NavLink to="/profile" className={({isActive}) => isActive ? "active" : ""}>
+          <span>👤</span><span className="label">Profile</span>
+        </NavLink>
+      </nav>
+
+      <div style={{marginTop:"auto", fontSize:12, opacity:0.8}}>CREAO</div>
+    </aside>
+  );
+}

@@ -1,0 +1,20 @@
+
+
+export default function Materials() {
+  return (
+    <div className="main">
+      <div className="header">
+        <div style={{fontSize:18, fontWeight:600}}>Study Materials</div>
+        <div style={{color:"#64748b"}}>Browse curated resources</div>
+      </div>
+
+      <section style={{marginTop:16}}>
+        <div style={{background:"#fff", padding:20, borderRadius:10, boxShadow:"0 6px 18px rgba(15,23,42,0.04)"}}>
+          <h2 style={{marginBottom:8}}>All Materials</h2>
+          <p style={{color:"#64748b"}}>Search and filter materials by category and difficulty.</p>
+          <div style={{marginTop:18, color:"#94a3b8"}}>No study materials available in this category yet.</div>
+        </div>
+      </section>
+    </div>
+  );
+}

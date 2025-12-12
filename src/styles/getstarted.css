@@ -1,0 +1,240 @@
+:root{
+  --sidebar-w: 260px;
+  --max-width: 1100px;
+  --accent: #2563eb;
+  --muted: #64748b;
+  --card-bg: #ffffff;
+  --surface: #f8fafc;
+  --radius: 12px;
+  --shadow-1: 0 6px 18px rgba(2,6,23,0.06);
+  --shadow-2: 0 18px 40px rgba(2,6,23,0.10);
+}
+
+/* Reset / layout safety */
+.gs-root,
+.gs-hero,
+.gs-features,
+.gs-why,
+.gs-cta-block {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Ensure page uses the app-main spacing (no extra left offset) */
+.gs-root { padding: 28px 24px; }
+
+/* Hero */
+.gs-hero {
+  max-width: var(--max-width);
+  margin: 0 auto 28px;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.98));
+  box-shadow: var(--shadow-1);
+  display: block;
+}
+
+.gs-title {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: 34px;
+  line-height: 1.05;
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.4px;
+}
+
+.gs-brand {
+  background: linear-gradient(90deg,#60a5fa,#2563eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gs-sub {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 820px;
+}
+
+/* CTA button in hero */
+.gs-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37,99,235,0.16);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.gs-cta:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); }
+.gs-cta:focus { outline: 3px solid rgba(37,99,235,0.14); outline-offset: 4px; }
+
+/* Features grid */
+.gs-features {
+  max-width: var(--max-width);
+  margin: 18px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+/* Feature card */
+.gs-card {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-1);
+  transition: transform 180ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 140px;
+  text-decoration: none;
+  color: inherit;
+}
+.gs-card:focus,
+.gs-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-2);
+}
+.gs-card:focus { outline: 3px solid rgba(37,99,235,0.12); outline-offset: 6px; }
+
+.gs-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg,#eef2ff,#e0f2fe);
+  color: var(--accent);
+  font-size: 22px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.gs-card-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.gs-card-desc {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+  flex: 1 1 auto;
+}
+
+/* Why Choose Techapti section */
+.gs-why {
+  max-width: var(--max-width);
+  margin: 28px auto 0;
+  display: block;
+  gap: 18px;
+}
+
+.gs-why-title {
+  font-size: 22px;
+  margin: 0 0 12px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.gs-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.gs-why-col {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+}
+.gs-why-sub {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #0f172a;
+  font-weight: 600;
+}
+.gs-why-col ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* CTA block at bottom */
+.gs-cta-block {
+  max-width: var(--max-width);
+  margin: 24px auto 48px;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg,#fff,#f8fafc);
+  box-shadow: var(--shadow-1);
+  text-align: left;
+}
+
+.gs-cta-title { margin: 0 0 6px; font-size: 20px; font-weight: 700; color: #0f172a; }
+.gs-cta-sub { margin: 0 0 12px; color: var(--muted); }
+
+.gs-cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.gs-cta-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+.gs-cta-secondary {
+  background: transparent;
+  border: 1px solid #e6eef8;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 980px) {
+  .gs-title { font-size: 28px; }
+  .gs-hero { padding: 20px; }
+  .gs-root { padding: 20px; }
+  .gs-features { gap: 14px; }
+}
+
+@media (max-width: 640px) {
+  .gs-title { font-size: 22px; }
+  .gs-card { min-height: 120px; padding: 14px; }
+  .gs-card-icon { width: 48px; height: 48px; font-size: 20px; }
+  .gs-why-grid { grid-template-columns: 1fr; }
+  .gs-cta-block { padding: 14px; margin-bottom: 36px; }
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .gs-card, .gs-cta, .gs-card-icon { transition: none !important; transform: none !important; }
+}
+
+/* Utility: ensure no left offset on this page */
+.app-main .gs-root { margin-left: 0; padding-left: 0; }
+
+/* Small visual debug helpers (comment out in production) */
+/* .app-main { outline: 1px solid rgba(37,99,235,0.06); } */
+/* .gs-root { outline: 1px dashed rgba(16,185,129,0.06); } */
+

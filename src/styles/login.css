@@ -1,0 +1,108 @@
+.login-root { padding: 40px; display:flex; align-items:flex-start; justify-content:center; }
+.login-card {
+  width: 420px; background:#fff; padding:28px; border-radius:12px; box-shadow:0 10px 30px rgba(2,6,23,0.06);
+}
+.login-card h2 { margin:0 0 6px; font-size:20px; }
+.login-sub { margin:0 0 18px; color:#64748b; }
+.login-label { display:block; margin-bottom:12px; font-size:13px; color:#334155; }
+.login-input { width:100%; padding:10px 12px; border-radius:8px; border:1px solid #e6eef8; margin-top:6px; }
+.login-actions { display:flex; gap:10px; margin-top:16px; }
+.login-btn { background:#2563eb; color:#fff; padding:10px 14px; border-radius:8px; border:0; cursor:pointer; }
+.login-ghost { background:transparent; border:1px solid #e6eef8; padding:10px 14px; border-radius:8px; cursor:pointer; }
+/* social buttons */
+.social-row { display:flex; gap:10px; margin-bottom: 12px; }
+.social-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6eef8;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.social-btn.google { border-color: #e8f0fe; }
+.social-btn.github { border-color: #e6eef8; }
+.social-icon { font-size: 16px; }
+
+/* divider */
+.divider { display:flex; align-items:center; gap:12px; margin: 12px 0; color:#94a3b8; }
+.divider::before, .divider::after { content:""; flex:1; height:1px; background:#eef2ff; }
+.divider span { padding: 0 8px; font-size: 13px; color:#64748b; }
+/* picker backdrop and card */
+.picker-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2,6,23,0.28);
+  z-index: 120;
+  padding: 20px;
+}
+
+.picker-card {
+  width: 420px;
+  max-width: calc(100% - 40px);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(2,6,23,0.12);
+  overflow: hidden;
+  padding: 12px;
+}
+
+.picker-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 8px 6px;
+  border-bottom: 1px solid rgba(2,6,23,0.04);
+}
+.picker-close {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.picker-sub { margin: 10px 6px; color: #64748b; font-size: 13px; }
+
+.picker-list { list-style:none; margin: 8px 0; padding: 6px; max-height: 260px; overflow:auto; }
+.picker-item {
+  width: 100%;
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+.picker-item:hover { background: rgba(2,6,23,0.03); }
+.picker-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg,#eef2ff,#e0f2fe);
+  color: #2563eb;
+  font-size: 18px;
+}
+.picker-text { font-weight: 600; color: #0f172a; }
+
+.picker-footer { padding: 10px 6px; border-top: 1px solid rgba(2,6,23,0.04); text-align: center; }
+.picker-add { background: transparent; border: none; color: #2563eb; cursor: pointer; font-weight: 600; }
+
+/* keep existing login styles intact but ensure modal sits above everything */
+.login-root { position: relative; z-index: 10; }
+
+/* small responsive tweak */
+@media (max-width: 480px) {
+  .picker-card { width: 100%; padding: 10px; }
+  .picker-avatar { width: 36px; height: 36px; }
+}

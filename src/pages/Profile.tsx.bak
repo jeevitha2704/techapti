@@ -1,0 +1,27 @@
+import React from "react";
+
+export default function Profile() {
+  return (
+    <div className="main">
+      <div className="header">
+        <div style={{fontSize:18, fontWeight:600}}>Profile</div>
+        <div style={{color:"#64748b"}}>Manage your account</div>
+      </div>
+
+      <section style={{marginTop:16, display:"grid", gridTemplateColumns:"200px 1fr", gap:18}}>
+        <div style={{background:"#fff", padding:20, borderRadius:10, boxShadow:"0 6px 18px rgba(15,23,42,0.04)", textAlign:"center"}}>
+          <div style={{width:80, height:80, borderRadius:40, background:"#e2e8f0", display:"inline-flex", alignItems:"center", justifyContent:"center", fontWeight:700}}>SU</div>
+          <div style={{marginTop:12, fontWeight:600}}>Student User</div>
+        </div>
+
+        <div style={{background:"#fff", padding:20, borderRadius:10, boxShadow:"0 6px 18px rgba(15,23,42,0.04)"}}>
+          <h3>Account Information</h3>
+          <div style={{marginTop:8, color:"#475569"}}>Full Name: Student User</div>
+          <div style={{marginTop:6, color:"#475569"}}>Username: student</div>
+          <div style={{marginTop:6, color:"#475569"}}>Email: student@teachapti.com</div>
+          <button style={{marginTop:12, padding:"8px 12px", borderRadius:8, background:"#0b69ff", color:"#fff", border:"none"}}>Edit</button>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -1,0 +1,166 @@
+/* ensure header is compact and full width */
+.app-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  height: 48px;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: transparent;
+}
+
+/* push controls to the right */
+.header-right { margin-left: auto; display:flex; gap:12px; align-items:center; }
+
+/* avatar: visible background, border, and fallback styling */
+.profile-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: inline-block;
+  background: linear-gradient(180deg,#f8fbff,#eef6ff); /* subtle background if image transparent */
+  border: 2px solid rgba(2,6,23,0.06);
+  box-shadow: 0 2px 6px rgba(2,6,23,0.04);
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+/* stronger visible focus and hover states */
+.profile-avatar:hover { transform: scale(1.04); box-shadow: 0 6px 18px rgba(2,6,23,0.08); }
+.profile-link:focus .profile-avatar,
+.profile-avatar:focus { outline: 3px solid rgba(37,99,235,0.12); outline-offset: 3px; }
+.profile-avatar-fallback-small {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef6ff;
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 13px;
+  border: 2px solid rgba(2,6,23,0.04);
+}
+
+.header-signout {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(2,6,23,0.06);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ensure bell and popover anchor to the header-right area */
+.notif-wrap { position: relative; display: inline-block; }
+.notif-pop { right: 0; position: absolute; margin-top: 8px; transform-origin: top right; }
+
+/* reduce chance of clipping */
+.app-main { overflow: visible; }
+/* Bell button: icon-only, no square */
+.notif-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;               /* compact circular hit area */
+  height: 40px;
+  padding: 0;
+  border-radius: 999px;      /* circular */
+  border: none;              /* remove square border */
+  background: transparent;   /* no square background */
+  color: #0f172a;            /* icon color */
+  cursor: pointer;
+  position: relative;
+  font-size: 16px;
+}
+
+/* subtle hover / focus */
+.notif-btn:hover { background: rgba(37,99,235,0.06); }
+.notif-btn:focus { outline: 3px solid rgba(37,99,235,0.12); outline-offset: 3px; }
+
+/* small unread dot in top-right of the icon */
+.notif-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ef4444;       /* red unread */
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.08);
+}
+
+/* Popover container */
+.notif-pop {
+  width: 320px;
+  max-width: calc(100vw - 24px);
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(2,6,23,0.06);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.08);
+  padding: 10px;
+  margin-top: 8px;
+  right: 0;
+  z-index: 60;
+}
+
+/* header row inside popover */
+.notif-pop-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(2,6,23,0.03);
+  margin-bottom: 8px;
+}
+.notif-pop-header strong { font-size: 14px; }
+.notif-mark {
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* list */
+.notif-list { list-style:none; margin: 8px 0; padding: 0; display:flex; flex-direction:column; gap:8px; }
+
+/* each item: compact, single-line body, bold title */
+.notif-item {
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(180deg,#fff,#fbfdff);
+  transition: background .12s, transform .08s;
+}
+.notif-item.unread { border-left: 4px solid #2563eb; }
+.notif-item:hover { transform: translateY(-2px); background: #f8fafc; }
+
+/* title + body + time layout */
+.notif-title { font-weight: 700; font-size: 13px; color: #0f172a; line-height: 1; }
+.notif-body { font-size: 13px; color: #475569; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.notif-time { font-size: 12px; color: #94a3b8; align-self:flex-end; }
+
+/* footer */
+.notif-pop-footer { display:flex; justify-content:flex-end; padding-top: 6px; }
+.notif-view-all {
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* small responsive tweak */
+@media (max-width: 480px) {
+  .notif-pop { width: 92vw; left: 4vw; right: 4vw; }
+}
